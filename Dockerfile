@@ -6,7 +6,7 @@ WORKDIR /code
 RUN apk update && \
     apk add --no-cache make gcc g++ libgcc libstdc++ libsodium musl libzmq zeromq-dev linux-headers python3-dev && \
     pip install --upgrade pip && \
-    pip install selenium && \
+    pip install requests selenium && \
     rm -Rf /tmp/* && \
     rm -Rf /root/.cache/*
 
