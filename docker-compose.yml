@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  selenium-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - selenium-chrome
+    deploy:
+      restart_policy:
+        condition: on-failure
+#    env_file: ./.env
+    image: andreburto/selenium-test
+    volumes:
+    - type: bind
+      source: ./code
+      target: /code
+  selenium-chrome:
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+      restart_policy:
+        condition: on-failure
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
