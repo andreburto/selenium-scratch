@@ -2,7 +2,7 @@
 
 ### About
 
-A proof-of-concept to setup running Seleniun tests in a Docker container. 
+A proof-of-concept setup to run Seleniun tests in a Docker container. 
 This means no need to manually install Chrome driver, and it can run in a pipeline.
 
 ### Usage
